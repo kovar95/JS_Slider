@@ -7,11 +7,17 @@ var photoUrls = [
 ];
 
 var photos = document.querySelectorAll(".slider img");
-console.log(photos);
 
 photos.forEach(function(element, index){
 	element.setAttribute("src", photoUrls[index]);
 });
+
+var slides = document.querySelectorAll(".slide");
+
+slides.forEach(function(element, index){
+	element.setAttribute("src", photoUrls[index]);
+});
+
 
 // FIRST FUNCTION - just simple slide show on 5 sec
 
@@ -21,16 +27,13 @@ photos.forEach(function(element, index){
 // 	var myPhoto = pics[0];
 // 	pics[pics.length - 1].after(myPhoto);
 
-// 	var thumbnails = document.querySelectorAll(".thumbnails span");
-
-// 	thumbnails.forEach(function(element, index){
+// 	slides.forEach(function(element, index){
 // 		if (pics[1].getAttribute("src") === photoUrls[index]) {
 // 			element.classList.add("active");
 // 		} else {
 // 			element.classList.remove("active");
 // 		}
 // 	})
-
 
 // }
 
@@ -65,9 +68,7 @@ function switchSlider(someArrow) {
 
 	var firstPic = document.querySelector(".slider img");
 
-	var thumbnails = document.querySelectorAll(".thumbnails span");
-
-	thumbnails.forEach(function(element, index){
+	slides.forEach(function(element, index){
 		if (firstPic.getAttribute("src") === photoUrls[index]) {
 			element.classList.add("active");
 		} else {
